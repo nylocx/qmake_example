@@ -15,9 +15,9 @@ TARGET = utility_library
 # During the latter passes, build_pass and the respective debug or release option is appended
 # to CONFIG. This makes it possible to perform build-specific tasks. For example:
 # Source: https://doc.qt.io/qt-5/qmake-variable-reference.html
-# Single line scopes are done with colons multiline scopes are achived with curly braces.
+# Single line scopes are done with colons, multiline scopes are achived with curly braces.
 # Note: The scope opening brace has to be in the same line as the scoping condition.
-build_pass:CONFIG(debug, debug|release) {
+CONFIG(debug, debug|release) {
     # The win32 scope matches both 64- and 32-bit Windows builds.
     # There are linux/unix and macx scopes too for other platforms
     win32: TARGET = $$join(TARGET,,,_d)

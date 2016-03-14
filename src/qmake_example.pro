@@ -33,10 +33,11 @@ isEmpty(PREFIX) {
 }
 
 # Show the global configuration in IDEs like Qt Creator
-OTHER_FILES += .qmake.conf
+OTHER_FILES += \
+    .qmake.conf \
+    version.sh
 
 
 # TODO:
 
-# - Show how to create custom targets within .pro files and how to execute post build steps.
 # - Show how to use rpath to define the path of the libraries.

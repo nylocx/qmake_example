@@ -22,7 +22,8 @@ SOURCES += \
 
 # Header files
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    ../version.h
 
 # User interface formulars
 FORMS += \
@@ -41,9 +42,21 @@ win32 {
     }
 } else {
     LIBS += \
-        -L$$OUT_PWD/../utility_library += -lutility_library
+        -L$$OUT_PWD/../utility_library -lutility_library
 }
 
+# Add a additional target, in this case git version header file. The FORCE depends will cause this
+# target to be executed with every compilation.
+# Instead of QMAKE_EXTRA_TARGETS there is also QMAKE_POST_LINK for post build processing.
+unix {
+    versiontarget.target = ../version.h
+    versiontarget.commands = $$PWD/../version.sh
+    versiontarget.depends = FORCE
+
+    QMAKE_EXTRA_TARGETS += versiontarget
+
+    PRE_TARGETDEPS += ../version.h
+}
 
 # Just a simple message to show the usage of globally defined variables.
 message($$CUSTOM_VARIABLE)
