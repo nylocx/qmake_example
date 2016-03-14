@@ -27,5 +27,8 @@
 *.out
 *.app
 
+# Qt Creator
+*.pro.user
+
 # Build directories
 build-qmake_example-*/

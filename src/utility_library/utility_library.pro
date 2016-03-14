@@ -20,7 +20,7 @@ TARGET = utility_library
 build_pass:CONFIG(debug, debug|release) {
     # The win32 scope matches both 64- and 32-bit Windows builds.
     # There are linux/unix and macx scopes too for other platforms
-    win32: TARGET = $$join(TARGET,_,,d)
+    win32: TARGET = $$join(TARGET,,,_d)
     # In Qt5 it's pretty easy to scope on this too with
     contains(QT_ARCH, i386) {
         message("32-bit debug build")

@@ -29,19 +29,19 @@ FORMS += \
     mainwindow.ui
 
 # Libraries this executable will be linked to -L gives the path and -l the name.
-LIBS += \
-    -L$$OUT_PWD/../utility_library
+
 
 # On Windows debug libraries sometimes have a _d/d or _debug suffix you can use scopes to handle
 # that. For more information see the utility_library.pro file.
 win32 {
     CONFIG(debug, debug|release) {
-        LIBS += -lutility_library_d
+        LIBS += -L$$OUT_PWD/../utility_library/debug -lutility_library_d
     } else {
-        LIBS += -lutility_library
+        LIBS += -L$$OUT_PWD/../utility_library/release -lutility_library
     }
 } else {
-    LIBS += -lutility_library
+    LIBS += \
+        -L$$OUT_PWD/../utility_library += -lutility_library
 }
 
 
