@@ -37,8 +37,6 @@ OTHER_FILES += .qmake.conf
 
 
 # TODO:
-# - Show the usage of scopes for windows/linux/mac builds.
-# - Show how to use the CONFIG(debug, debug | release) scope to set options for debug and release
-#   differently.
+
 # - Show how to create custom targets within .pro files and how to execute post build steps.
 # - Show how to use rpath to define the path of the libraries.
