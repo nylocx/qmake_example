@@ -6,7 +6,8 @@ TEMPLATE = subdirs
 # the same name or it can be free chosen sub-project names that have to be defined later on.
 SUBDIRS = \
     utility_library \
-    main
+    main \
+    quick_project
 
 # This gives a definition of the sub-projects given in the SUBDIRS variable.
 # The following table gives the possible values for subdir projects.
@@ -24,6 +25,8 @@ SUBDIRS = \
 utility_library.subdir = utility_library
 main.subdir = main
 main.depends = utility_library
+quick_project.file = quick/quick_example.pro
+quick_project.depends = utility_library
 
 # This is used to mimic the behavior of autotools and others to be able to specify a prefix where
 # the files will be installed to. Here it defaults to /usr if no PREFIX was given with
